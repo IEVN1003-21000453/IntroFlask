@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block container %}
+
+<form action="/distancia" method="post">
+
+    <div class="mb-3">
+        <label for="px1" class="form-label">
+            Primer punto (coordenada x):
+        </label>
+        <input type="number" step="any" class="form-control"
+               id="px1" name="px1" value="{{ px1 }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="py1" class="form-label">
+            Primer punto (coordenada y):
+        </label>
+        <input type="number" step="any" class="form-control"
+               id="py1" name="py1" value="{{ py1 }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="px2" class="form-label">
+            Segundo punto (coordenada x):
+        </label>
+        <input type="number" step="any" class="form-control"
+               id="px2" name="px2" value="{{ px2 }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="py2" class="form-label">
+            Segundo punto (coordenada y):
+        </label>
+        <input type="number" step="any" class="form-control"
+               id="py2" name="py2" value="{{ py2 }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">
+        Calcular distancia
+    </button>
+
+</form>
+
+<h1 class="mt-4">
+    Distancia: {{ "%.2f"|format(res) }}
+</h1>
+
+{% endblock %}
